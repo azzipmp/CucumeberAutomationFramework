@@ -15,7 +15,7 @@ import cucumber.api.junit.Cucumber;
 		//format={"json:target/Destination/cucumber.json"})
 		monochrome = true,
 		//tags = {"@SMokeTest,@test1"},
-		glue={"src/test/java/TestSteps"}
+		glue={"TestSteps"}
 				//glue={}
 		)
 public class TestRunner{

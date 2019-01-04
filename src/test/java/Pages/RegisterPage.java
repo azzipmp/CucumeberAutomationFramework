@@ -84,10 +84,7 @@ WebDriver driver;
 		 	   Thread.sleep(2000);		
 	}
 	
-	public void clickonsubmit()
-	{
-		registerbtn.click();
-	}
+	
 	public String capturetext()
 	{
 		return bodytag.getText();

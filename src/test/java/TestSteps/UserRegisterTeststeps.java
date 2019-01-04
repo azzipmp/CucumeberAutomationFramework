@@ -13,7 +13,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
-import Pages.Hooks;
+//import Pages.Hooks;
 import Pages.RegisterPage;
 import Pages.HomePage;
 import cucumber.api.java.en.Then;
@@ -22,9 +22,9 @@ import cucumber.api.java.en.Then;
 public class UserRegisterTeststeps {
 	//WebDriver driver; 
 		 String url = "http://newtours.demoaut.com/";
-		
+		 RegisterPage rp;
 		// String ActualValue;
-		 
+		 HomePage hm;
 		 public WebDriver driver;
 		  
 
@@ -32,7 +32,7 @@ public class UserRegisterTeststeps {
 		    public UserRegisterTeststeps()
 		    {
 		      driver=Hooks.driver;
-		       
+		      System.out.println("UserRegisterTeststeps construction"); 
 		    }
 
 		 
@@ -50,7 +50,7 @@ public class UserRegisterTeststeps {
 		 {
 
 			 System.out.println( "clickregisterlink");
-			 HomePage hm= new HomePage(driver);
+			  hm= new HomePage(driver);
 			 hm.clickonregisterlink();
 			Thread.sleep(2000);
 		 
@@ -78,25 +78,18 @@ public class UserRegisterTeststeps {
 		 {
 
 		 	
-			 RegisterPage rp=new RegisterPage(driver);
+			  rp=new RegisterPage(driver);
 			 rp.createuserregistrationwiththreefileds(value1,value2,value3);
 			 
 		 }
-		 @And("^Click on submit button$")
-		 public void clickonsubmit() throws InterruptedException
-		 {
-		//	 driver.findElement(By.name("register")).click();
-		 //	    Thread.sleep(2000);
-			 RegisterPage rp=new RegisterPage(driver);
-			 rp.clickonsubmit();
-		 }
+		
 		 
 		 @Then("^I verify the \"(.*?)\" created sucessfully$")
 		 public void verifyusercreation(String value1)
 		 {
 			// String  sActualValue=driver.findElement(By.tagName("Body")).getText();
 			 
-			 RegisterPage rp=new RegisterPage(driver);
+			  rp=new RegisterPage(driver);
 			 String  sActualValue=rp.capturetext();
 			 	System.out.println( "check the actual value:"+sActualValue);
 			 	   String expected = "Your user name is "+value1; 
