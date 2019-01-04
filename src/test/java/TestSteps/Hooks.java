@@ -1,4 +1,4 @@
-package Pages;
+package TestSteps;
 
 import java.net.MalformedURLException;
 import cucumber.api.java.en.Given;
